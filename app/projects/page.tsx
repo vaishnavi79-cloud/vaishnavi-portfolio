@@ -9,22 +9,25 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Canteen food demand prediction",
+      title: "Canteen Food Demand Prediction",
       description:
-        "An application that helps canteens tack food preparation and consumption data ,analyze wastage and predict future food demand to minimize food wastage",
-      file: "/projects/mlpro.pdf"
+        "An application that helps canteens track food preparation and consumption data, analyze wastage, and predict future food demand to minimize food wastage.",
+      file: "/projects/mlpro.pdf",
+      github: "https://github.com/vaishnavi79-cloud/Food_Demand_Predictor"
     },
     {
       title: "SmartCart Application",
       description:
         "A Flutter-based smart shopping app that compares product prices and helps users shop efficiently.",
-      file: "/projects/smartcart.pdf"
+      file: "/projects/smartcart.pdf",
+      github: "https://github.com/vaishnavi79-cloud/SmartCart"
     },
     {
       title: "IoT Monitoring System",
       description:
         "An IoT-based system that monitors sensor data and sends real-time updates using connected devices.",
-      file: "/projects/iot.pdf"
+      file: "/projects/iot.pdf",
+      github: "https://github.com/vaishnavi79-cloud/IOT-Break_Remainder_System"
     }
   ];
 
@@ -58,17 +61,34 @@ export default function Projects() {
               {project.title}
             </h2>
 
-            <p className="text-gray-300 mb-4">
+            <p className="text-gray-300 mb-6">
               {project.description}
             </p>
 
-            <a
-              href={project.file}
-              target="_blank"
-              className="inline-block px-5 py-2 bg-purple-600 rounded-lg hover:bg-purple-500"
-            >
-              View Project
-            </a>
+            {/* Buttons */}
+            <div className="flex gap-3">
+
+              {/* View Project */}
+              <a
+                href={project.file}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2 bg-purple-600 rounded-lg hover:bg-purple-500 transition"
+              >
+                View Project
+              </a>
+
+              {/* GitHub Repo */}
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition"
+              >
+                GitHub
+              </a>
+
+            </div>
 
           </motion.div>
 
@@ -81,7 +101,7 @@ export default function Projects() {
 
         <button
           onClick={() => router.push("/menu")}
-          className="px-8 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-200"
+          className="px-8 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition"
         >
           Back to Menu
         </button>
